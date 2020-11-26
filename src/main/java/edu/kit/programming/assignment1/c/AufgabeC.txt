@@ -1,0 +1,44 @@
+1. 
+
++---------+----+----+----+
+| Schritt | i  | j  | c  |
++---------+----+----+----+
+|       1 | 10 | /  | /  |
++---------+----+----+----+
+|       2 | 11 | 10 | /  |
++---------+----+----+----+
+|       3 | 11 | 9  | 9  |
++---------+----+----+----+
+|       4 | 10 | 9  | 10 |
++---------+----+----+----+
+
+Nach dem letzten Schritt ist i 10.
+
+2. 
+
+Ein enum-Typ "Month" wäre gut geeignet, da die Monate als feste, zählbare Menge von Konstanten dargestellt werden können. Die Jahreszeit könnte ein Attribut des enums sein.
+
+3. 
+
+In der folgenden Reihe referenziert "$" immer den vorherigen Ausdruck.
+
+q || w 	== true
+!($) 	== false
+$ && t 	== false
+$ || !w == true
+$ ^ !q 	== true
+
+4.
+
+2 	^ 5 	== 7
+0b10 	^ 0b101 == 0b111
+
+5.
+
+a) 9.999999999985448
+b) 9.9921875
+c) 10
+
+Der Grund ist die Art, wie floats bzw. doubles gespeichert werden. Beide haben aus Speicher- und Recheneffizienzgründen keine volle mathematische Präzision, wobei double doppelt so präzise (64 Bit) wie float (32 Bit) ist.
+Siehe https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-2.html#jvms-2.3.2
+
