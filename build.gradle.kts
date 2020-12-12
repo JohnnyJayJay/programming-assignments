@@ -19,7 +19,7 @@ checkstyle {
     config = resources.text.fromFile("config/checkstyle/optionalCheckstyleRules.xml")
 }
 
-val packageDeclaration = "^\\s*package\\s+[^;]+;$".toRegex()
+//val packageDeclaration = "^\\s*package\\s+[^;]+;$".toRegex()
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -35,8 +35,9 @@ tasks {
         dependsOn("checkstyleMain", "test")
         from("src/main/java")
         into("build/final")
-        filter {
+        exclude("edu/kit/informatik/*")
+        /*filter {
             it.replace(packageDeclaration, "")
-        }
+        }*/
     }
 }

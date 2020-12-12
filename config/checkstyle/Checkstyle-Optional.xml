@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.1//EN" "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
 <module name="Checker">
-    <property name="severity" value="error" />
+    <property name="severity" value="warning" />
 
     <!-- ######## TEMPLATE/CHECKSTYLE/SIZE.XML ######## !-->
     <!-- See http://yle.sourceforge.net/config_sizes.html#FileLength !-->
@@ -306,14 +306,6 @@
             <property name="tokens"                value="INTERFACE_DEF, CLASS_DEF"/>
         </module>
 
-        <!-- Missing JavaDoc Method -->
-        <module name="MissingJavadocMethod">
-            <property name="scope" value="package"/>
-        </module>
-
-        <!-- Missing Class JavaDoc-->
-        <module name="MissingJavadocType"/>
-
     </module>
     <!-- ######## END OF TEMPLATE/CHECKSTYLE/JAVADOC.XML ######## !-->
     <!-- ######## TEMPLATE/CHECKSTYLE/OTHERS.XML ######## !-->
@@ -334,18 +326,20 @@
         <!-- See http://yle.sf.net/config_html !-->
         <module name="FinalClass"/>
 
-        <!-- Check nested (internal) classes/interfaces are declared at the bottom of the class after all method and field declarations. !-->
+        <!-- Check nested (internal) classes/interfaces are declared at the bottom of the class after all method and cell declarations. !-->
         <!-- See http://yle.sourceforge.net/config_html#InnerTypeLast !-->
         <module name="InnerTypeLast"/>
 
         <!-- Implements Bloch, Effective Java, Item 17 - Use Interfaces only to define types. !-->
         <!-- See http://yle.sf.net/config_html !-->
-        <module name="InterfaceIsType" />
+        <module name="InterfaceIsType">
+            <property name="allowMarkerInterfaces" value="false"/>
+        </module>
 
         <!-- Restricts throws statements to a specified count. !-->
         <!-- See http://yle.sf.net/config_html !-->
         <module name="ThrowsCount">
-            <property name="max" value="10"/>
+            <property name="max" value="2"/>
         </module>
 
         <!-- Checks that classes that define a covariant equals() method also override method equals(java.lang.Object). !-->
